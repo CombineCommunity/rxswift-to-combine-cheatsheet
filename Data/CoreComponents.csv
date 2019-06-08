@@ -1,0 +1,11 @@
+RxSwift,Combine,Notes
+Observable,Publisher,
+Driver,"BindableObject (SwiftUI)","Both guarantee no failure, but Driver guarantees delivery on Main Thread. In Combine, SwiftUI recreates the entire view hierarachy on the Main Thread, instead."
+Single,Future,
+Disposable,Cancellable,"There's no DisposeBag in Combine, AnyCancellable cancels on deinit."
+Observer,Subscriber,
+ConnectableObservableType,ConnectablePublisher,
+SubjectType,Subject,
+PublishSubject,PassthroughSubject,
+BehaviorSubject,CurrentValueSubject,"This seems to be the type that holds @State under the hood"
+SchedulerType,Scheduler,
