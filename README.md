@@ -56,6 +56,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | flatMapLatest                 | switchToLatest                        |                                                                                                          |
 | ifEmpty(switchTo:)            | replaceEmpty(with:)                   |                                                                                                          |
 | ignoreElements()              | ignoreOutput()                        |                                                                                                          |
+| just()                        | Publishers.Just()                     |                                                                                                          |
 | map                           | map, tryMap                           |                                                                                                          |
 | merge                         | merge, tryMerge                       |                                                                                                          |
 | multicast                     | multicast                             |                                                                                                          |
