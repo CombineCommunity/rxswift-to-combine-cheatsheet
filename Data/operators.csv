@@ -18,7 +18,7 @@ filter,"filter, tryFilter",
 first,"first, tryFirst",
 flatMap,flatMap,
 flatMapLatest,switchToLatest,
-ifEmpty(switchTo:),replaceEmpty(with:),
+ifEmpty(switchTo:),replaceEmpty(with:),"replaceEmpty accepts a value and returns a Just, it does not accept a Publisher."
 ignoreElements(),ignoreOutput(),
 just(),Publishers.Just(),
 map,"map, tryMap",
