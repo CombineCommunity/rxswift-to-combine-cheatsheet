@@ -79,7 +79,7 @@ docs.each { |file, title|
     HTML
 
     ## Convert HTML to Image 🤯
-    kit = IMGKit.new(html, :quality => 85)
+    kit = IMGKit.new(html, :quality => 100)
     file = kit.to_file("Resources/#{image_file}")
 }
 
