@@ -3,7 +3,7 @@ This is a Cheatsheet for [RxSwift](https://github.com/ReactiveX/RxSwift) develop
 
 It's based on the following blog post: [https://medium.com/gett-engineering/rxswift-to-apples-combine-cheat-sheet-e9ce32b14c5b](https://medium.com/gett-engineering/rxswift-to-apples-combine-cheat-sheet-e9ce32b14c5b)
 
-## [Basics](Data/Basics.csv)
+## [Basics](Data/basics.csv)
 
 |                       | RxSwift                          | Combine                                    |
 |-----------------------|----------------------------------|--------------------------------------------|
@@ -15,7 +15,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | UI Bindings           | RxCocoa                          | SwiftUI ²                                  |
 
 
-## [Core Components](Data/CoreComponents.csv)
+## [Core Components](Data/core_components.csv)
 
 | RxSwift                   | Combine                  | Notes                                                                                                                                                           |
 |---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -31,7 +31,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | SchedulerType             | Scheduler                |                                                                                                                                                                 |
 
 
-## [Operators](Data/Operators.csv)
+## [Operators](Data/operators.csv)
 
 | RxSwift                       | Combine                               | Notes                                                                                                    |
 |-------------------------------|---------------------------------------|----------------------------------------------------------------------------------------------------------|
@@ -79,4 +79,6 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 
 
 # Contributing
-Add any data/operators to the appropriate CSV files in the **Data** folder, run `genreadme.rb` and commit the changes. Then, submit a Pull Request
+Add any data/operators to the appropriate CSV files in the **Data** folder, run `bundle install` and `generate.rb`.
+
+Finally, commit the changes and submit a Pull Request.
