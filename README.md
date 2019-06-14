@@ -40,7 +40,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | bind(to:)                     | `assign(to:on:)`                      | Assign uses a KeyPath which is really nice and useful. RxSwift needs a Binder / ObserverType to bind to. |
 | buffer                        | buffer                                |                                                                                                          |
 | catchError                    | catch                                 |                                                                                                          |
-| catchErrorJustReturn          | catch + just                          |                                                                                                          |
+| catchErrorJustReturn          | replaceError(with:)                   |                                                                                                          |
 | combineLatest                 | combineLatest, tryCombineLatest       |                                                                                                          |
 | compactMap                    | compactMap, tryCompactMap             |                                                                                                          |
 | concat                        | append, prepend                       |                                                                                                          |
@@ -54,7 +54,6 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | first                         | first, tryFirst                       |                                                                                                          |
 | flatMap                       | flatMap                               |                                                                                                          |
 | flatMapLatest                 | switchToLatest                        |                                                                                                          |
-| ifEmpty(switchTo:)            | replaceEmpty(with:)                   |                                                                                                          |
 | ignoreElements()              | ignoreOutput()                        |                                                                                                          |
 | just()                        | Publishers.Just()                     |                                                                                                          |
 | map                           | map, tryMap                           |                                                                                                          |
