@@ -78,8 +78,8 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | flatMapLatest        | switchToLatest                           |                                                                                                          |
 | from                 | ❌                                        |                                                                                                          |
 | groupBy              | ❌                                        |                                                                                                          |
-| ifEmpty(default:)    | ❌                                        |                                                                                                          |
-| ifEmpty(switchTo:)   | replaceEmpty(with:)                      |                                                                                                          |
+| ifEmpty(default:)    | replaceEmpty(with:)                      |                                                                                                          |
+| ifEmpty(switchTo:)   | ❌                                        | Could be achieved with composition - replaceEmpty(with: publisher).switchToLatest()                      |
 | ignoreElements       | ignoreOutput                             |                                                                                                          |
 | interval             | ❌                                        |                                                                                                          |
 | just                 | Publishers.Just                          |                                                                                                          |
