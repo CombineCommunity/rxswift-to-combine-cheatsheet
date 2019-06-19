@@ -90,8 +90,10 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | never                | ❌                                        |                                                                                                          |
 | observeOn            | receive(on:)                             |                                                                                                          |
 | of                   | ❌                                        |                                                                                                          |
+| publish              | makeConnectable                          |                                                                                                          |
 | range                | ❌                                        |                                                                                                          |
 | reduce               | reduce, tryReduce                        |                                                                                                          |
+| refCount             | autoconnect                              |                                                                                                          |
 | repeatElement        | ❌                                        |                                                                                                          |
 | retry, retry(3)      | retry, retry(3)                          |                                                                                                          |
 | retryWhen            | ❌                                        |                                                                                                          |
