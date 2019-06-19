@@ -31,7 +31,10 @@ docs.each { |file, title|
     puts "Generating image: #{image_file}".light_blue
 
     ## Convert markdown to HTML
+    ## We also have to replace emoji manually with images, due to a bug in wkhtmltoimage.
+    ## See: https://github.com/wkhtmltopdf/wkhtmltopdf/issues/2913
     tableHTML = CommonMarker.render_html(table, :DEFAULT, %i[table])
+                            .gsub('❌', '<img src="https://github.com/freak4pc/rxswift-to-combine-cheatsheet/raw/master/Resources/Icons/x.png" style="width: 22px; height: auto;" />')
 
     html = <<-HTML
 <!DOCTYPE html>
@@ -77,9 +80,9 @@ docs.each { |file, title|
 #{tableHTML}</body>
 </html>
     HTML
-
+    
     ## Convert HTML to Image 🤯
-    kit = IMGKit.new(html, :quality => 100)
+    kit = IMGKit.new(html, :quality => 100, :encoding => 'UTF-8')
     file = kit.to_file("Resources/#{image_file}")
 }
 
