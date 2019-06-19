@@ -96,7 +96,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | takeUntil            | prefix(untilOutputFrom:)                 |                                                                                                          |
 | throttle             | throttle                                 |                                                                                                          |
 | timeout              | timeout                                  |                                                                                                          |
-| timer                | ❌                                        |                                                                                                          |
+| timer                | Timer.publish                            |                                                                                                          |
 | toArray()            | collect()                                |                                                                                                          |
 | window               | collect(Publishers.TimeGroupingStrategy) | Combine has a TimeGroupingStrategy.byTimeOrCount that could be used as a window.                         |
 | withLatestFrom       | ❌                                        |                                                                                                          |
