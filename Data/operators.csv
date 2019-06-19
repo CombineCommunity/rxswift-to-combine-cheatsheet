@@ -1,4 +1,5 @@
 RxSwift,Combine,Notes
+amb(),❌,
 asObservable(),eraseToAnyPublisher(),
 asObserver(),eraseToAnySubject(),
 bind(to:),`assign(to:on:)`,Assign uses a KeyPath which is really nice and useful. RxSwift needs a Binder / ObserverType to bind to.
@@ -12,8 +13,6 @@ concatMap,❌,
 create,AnyPublisher,"AnyPublisher has an initializer with an anonymous closure, similar to Observable.create"
 debounce,debounce,
 debug,print,
-ifEmpty(default:),❌,
-ifEmpty(switchTo:),replaceEmpty(with:),
 deferred,Publishers.Deferred,
 delay,delay,
 delaySubscription,❌,
@@ -31,6 +30,8 @@ flatMapFirst,❌,
 flatMapLatest,switchToLatest,
 from,❌,
 groupBy,❌,
+ifEmpty(default:),❌,
+ifEmpty(switchTo:),replaceEmpty(with:),
 ignoreElements,ignoreOutput,
 interval,❌,
 just,Publishers.Just,

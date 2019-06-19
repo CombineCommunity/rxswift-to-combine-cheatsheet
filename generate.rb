@@ -6,6 +6,7 @@ error("csv2md is not intalled, Please run `bundle install` first") unless $?.exi
 require 'commonmarker'
 require 'imgkit'
 require 'colorize'
+require 'csv'
 
 docs = {
     "basics.csv" => "Basics",
@@ -20,9 +21,24 @@ output = "# RxSwift to Combine Cheatsheet\n" +
 puts "Rebuilding README.md ...".magenta
 
 docs.each { |file, title|
+    csv_path = "Data/#{file}"
+
+    ## Sort CSVs (aside for basics)
+    unless file == "basics.csv" then
+        csv = CSV.read(csv_path)
+        body = csv.drop(1).sort! { |a, b| a[0].to_s <=> b[0].to_s }
+        rows = body
+
+        csvOutput = CSV.generate_line(csv[0])
+        csvOutput += rows.inject([]) { |csv, row| csv << CSV.generate_line(row) }
+                         .join()
+        
+        File.write(csv_path, csvOutput)
+    end
+    
     ## Generate markdown for the specific section
-    output += "## [#{title}](Data/#{file})\n\n"
-    table = `csv2md Data/#{file}`
+    output += "## [#{title}](#{csv_path})\n\n"
+    table = `csv2md #{csv_path}`
     output += table
     output += "\n\n"
 
