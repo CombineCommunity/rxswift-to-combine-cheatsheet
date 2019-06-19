@@ -68,7 +68,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | distinctUntilChanged | removeDuplicates, tryRemoveDuplicates    |                                                                                                          |
 | do                   | handleEvents                             |                                                                                                          |
 | elementAt            | output(at:)                              |                                                                                                          |
-| empty                | ❌                                        |                                                                                                          |
+| empty                | Publishers.Empty(completeImmediately: true) |                                                                                                          |
 | enumerated           | ❌                                        |                                                                                                          |
 | error                | Publishers.Once                          | Publishers.Once has an initializer that takes an Error                                                   |
 | filter               | filter, tryFilter                        |                                                                                                          |
@@ -87,7 +87,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | materialize          | ❌                                        |                                                                                                          |
 | merge                | merge, tryMerge                          |                                                                                                          |
 | multicast            | multicast                                |                                                                                                          |
-| never                | ❌                                        |                                                                                                          |
+| never                | Publishers.Empty(completeImmediately: false) |                                                                                                          |
 | observeOn            | receive(on:)                             |                                                                                                          |
 | of                   | ❌                                        |                                                                                                          |
 | range                | ❌                                        |                                                                                                          |
@@ -109,7 +109,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | takeUntil            | prefix(untilOutputFrom:)                 |                                                                                                          |
 | throttle             | throttle                                 |                                                                                                          |
 | timeout              | timeout                                  |                                                                                                          |
-| timer                | ❌                                        |                                                                                                          |
+| timer                | Timer.publish                            |                                                                                                          |
 | toArray()            | collect()                                |                                                                                                          |
 | window               | collect(Publishers.TimeGroupingStrategy) | Combine has a TimeGroupingStrategy.byTimeOrCount that could be used as a window.                         |
 | withLatestFrom       | ❌                                        |                                                                                                          |
