@@ -74,7 +74,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | filter               | filter, tryFilter                            |                                                                                                          |
 | first                | first, tryFirst                              |                                                                                                          |
 | flatMap              | flatMap                                      |                                                                                                          |
-| flatMapFirst         | ❌                                            |                                                                                                          |
+| flatMapFirst         | flatMap(maxPublishers: .max(1))              |                                                                                                          |
 | flatMapLatest        | switchToLatest                               |                                                                                                          |
 | from                 | ❌                                            |                                                                                                          |
 | groupBy              | ❌                                            |                                                                                                          |

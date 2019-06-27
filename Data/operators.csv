@@ -26,7 +26,7 @@ error,Publishers.Once,Publishers.Once has an initializer that takes an Error
 filter,"filter, tryFilter",
 first,"first, tryFirst",
 flatMap,flatMap,
-flatMapFirst,❌,
+flatMapFirst,flatMap(maxPublishers: .max(1)),
 flatMapLatest,switchToLatest,
 from,❌,
 groupBy,❌,
