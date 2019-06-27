@@ -18,6 +18,6 @@ ScheduledDisposable,❌,
 SchedulerType,Scheduler,
 SerialDisposable,❌,
 Signal,❌,
-Single,Future,Single behaves differently than Future. Seems the latter has no auto-disposal when finished
+Single,Future,"They're only similar in the sense of single emission, but Future shares resources and executes immediately (very strange behavior)"
 SubjectType,Subject,
 TestScheduler,❌,There doesn't seem to be an existing testing scheduler for Combine code
