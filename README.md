@@ -17,30 +17,30 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 
 ## [Core Components](Data/core_components.csv)
 
-| RxSwift                   | Combine                  | Notes                                                                                                                                                           |
-|---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AnyObserver               | AnySubscriber            |                                                                                                                                                                 |
-| BehaviorRelay             | ❌                        | Simple wrapper around BehaviorSubject, could be easily recreated in Combine                                                                                     |
-| BehaviorSubject           | CurrentValueSubject      | This seems to be the type that holds @State under the hood                                                                                                      |
-| Completable               | ❌                        |                                                                                                                                                                 |
-| CompositeDisposable       | ❌                        |                                                                                                                                                                 |
-| ConnectableObservableType | ConnectablePublisher     |                                                                                                                                                                 |
-| Disposable                | Cancellable              |                                                                                                                                                                 |
-| DisposeBag                | ❌                        |                                                                                                                                                                 |
-| Driver                    | BindableObject (SwiftUI) | Both guarantee no failure, but Driver guarantees delivery on Main Thread. In Combine, SwiftUI recreates the entire view hierarachy on the Main Thread, instead. |
-| Maybe                     | ❌                        |                                                                                                                                                                 |
-| Observable                | Publisher                |                                                                                                                                                                 |
-| Observer                  | Subscriber               |                                                                                                                                                                 |
-| PublishRelay              | ❌                        | Simple wrapper around PublishSubject, could be easily recreated in Combine                                                                                      |
-| PublishSubject            | PassthroughSubject       |                                                                                                                                                                 |
-| ReplaySubject             | ❌                        |                                                                                                                                                                 |
-| ScheduledDisposable       | ❌                        |                                                                                                                                                                 |
-| SchedulerType             | Scheduler                |                                                                                                                                                                 |
-| SerialDisposable          | ❌                        |                                                                                                                                                                 |
-| Signal                    | ❌                        |                                                                                                                                                                 |
-| Single                    | Future                   | They're only similar in the sense of single emission, but Future shares resources and executes immediately (very strange behavior)                              |
-| SubjectType               | Subject                  |                                                                                                                                                                 |
-| TestScheduler             | ❌                        | There doesn't seem to be an existing testing scheduler for Combine code                                                                                         |
+| RxSwift                   | Combine                         | Notes                                                                                                                                                           |
+|---------------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AnyObserver               | AnySubscriber                   |                                                                                                                                                                 |
+| BehaviorRelay             | ❌                               | Simple wrapper around BehaviorSubject, could be easily recreated in Combine                                                                                     |
+| BehaviorSubject           | CurrentValueSubject             | This seems to be the type that holds @State under the hood                                                                                                      |
+| Completable               | ❌                               |                                                                                                                                                                 |
+| CompositeDisposable       | ❌                               |                                                                                                                                                                 |
+| ConnectableObservableType | ConnectablePublisher            |                                                                                                                                                                 |
+| Disposable                | Cancellable                     |                                                                                                                                                                 |
+| DisposeBag                | A collection of AnyCancellables | Call anyCancellable.store(in: collection), where collection can be an array, a set, or any other RangeReplaceableCollection                                     |
+| Driver                    | BindableObject (SwiftUI)        | Both guarantee no failure, but Driver guarantees delivery on Main Thread. In Combine, SwiftUI recreates the entire view hierarachy on the Main Thread, instead. |
+| Maybe                     | Publishers.Optional             |                                                                                                                                                                 |
+| Observable                | Publisher                       |                                                                                                                                                                 |
+| Observer                  | Subscriber                      |                                                                                                                                                                 |
+| PublishRelay              | ❌                               | Simple wrapper around PublishSubject, could be easily recreated in Combine                                                                                      |
+| PublishSubject            | PassthroughSubject              |                                                                                                                                                                 |
+| ReplaySubject             | ❌                               |                                                                                                                                                                 |
+| ScheduledDisposable       | ❌                               |                                                                                                                                                                 |
+| SchedulerType             | Scheduler                       |                                                                                                                                                                 |
+| SerialDisposable          | ❌                               |                                                                                                                                                                 |
+| Signal                    | ❌                               |                                                                                                                                                                 |
+| Single                    | Future                          | They're only similar in the sense of single emission, but Future shares resources and executes immediately (very strange behavior)                              |
+| SubjectType               | Subject                         |                                                                                                                                                                 |
+| TestScheduler             | ❌                               | There doesn't seem to be an existing testing scheduler for Combine code                                                                                         |
 
 
 ## [Operators](Data/operators.csv)
@@ -49,7 +49,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 |-----------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | amb()                 | ❌                                            |                                                                                                          |
 | asObservable()        | eraseToAnyPublisher()                        |                                                                                                          |
-| asObserver()          | eraseToAnySubject()                          |                                                                                                          |
+| asObserver()          | ❌                                            |                                                                                                          |
 | bind(to:)             | `assign(to:on:)`                             | Assign uses a KeyPath which is really nice and useful. RxSwift needs a Binder / ObserverType to bind to. |
 | buffer                | buffer                                       |                                                                                                          |
 | catchError            | catch                                        |                                                                                                          |
@@ -70,7 +70,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | elementAt             | output(at:)                                  |                                                                                                          |
 | empty                 | Publishers.Empty(completeImmediately: true)  |                                                                                                          |
 | enumerated            | ❌                                            |                                                                                                          |
-| error                 | Publishers.Once                              | Publishers.Once has an initializer that takes an Error                                                   |
+| error                 | Publishers.Fail                              |                                                                                                          |
 | filter                | filter, tryFilter                            |                                                                                                          |
 | first                 | first, tryFirst                              |                                                                                                          |
 | flatMap               | flatMap                                      |                                                                                                          |
@@ -82,7 +82,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | ifEmpty(switchTo:)    | ❌                                            | Could be achieved with composition - replaceEmpty(with: publisher).switchToLatest()                      |
 | ignoreElements        | ignoreOutput                                 |                                                                                                          |
 | interval              | ❌                                            |                                                                                                          |
-| just                  | Publishers.Just                              |                                                                                                          |
+| just                  | Just                                         |                                                                                                          |
 | map                   | map, tryMap                                  |                                                                                                          |
 | materialize           | ❌                                            |                                                                                                          |
 | merge                 | merge, tryMerge                              |                                                                                                          |

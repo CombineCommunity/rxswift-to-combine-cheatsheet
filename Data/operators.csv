@@ -1,7 +1,7 @@
 RxSwift,Combine,Notes
 amb(),❌,
 asObservable(),eraseToAnyPublisher(),
-asObserver(),eraseToAnySubject(),
+asObserver(),❌,
 bind(to:),`assign(to:on:)`,Assign uses a KeyPath which is really nice and useful. RxSwift needs a Binder / ObserverType to bind to.
 buffer,buffer,
 catchError,catch,
@@ -22,7 +22,7 @@ do,handleEvents,
 elementAt,output(at:),
 empty,Publishers.Empty(completeImmediately: true),
 enumerated,❌,
-error,Publishers.Once,Publishers.Once has an initializer that takes an Error
+error,Publishers.Fail,
 filter,"filter, tryFilter",
 first,"first, tryFirst",
 flatMap,flatMap,
@@ -34,7 +34,7 @@ ifEmpty(default:),replaceEmpty(with:),
 ifEmpty(switchTo:),❌,Could be achieved with composition - replaceEmpty(with: publisher).switchToLatest()
 ignoreElements,ignoreOutput,
 interval,❌,
-just,Publishers.Just,
+just,Just,
 map,"map, tryMap",
 materialize,❌,
 merge,"merge, tryMerge",
