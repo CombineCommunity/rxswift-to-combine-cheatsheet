@@ -58,7 +58,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | compactMap            | compactMap, tryCompactMap                    |                                                                                                          |
 | concat                | append, prepend                              |                                                                                                          |
 | concatMap             | ❌                                            |                                                                                                          |
-| create                | AnyPublisher                                 | AnyPublisher has an initializer with an anonymous closure, similar to Observable.create                  |
+| create                | ❌                                            | Apple removed AnyPublisher with a closure in Xcode 11 beta 3 :-(                                         |
 | debounce              | debounce                                     |                                                                                                          |
 | debug                 | print                                        |                                                                                                          |
 | deferred              | Publishers.Deferred                          |                                                                                                          |
