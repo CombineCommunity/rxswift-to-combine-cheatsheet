@@ -90,7 +90,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | multicast             | multicast                                    |                                                                                                          |
 | never                 | Publishers.Empty(completeImmediately: false) |                                                                                                          |
 | observeOn             | receive(on:)                                 |                                                                                                          |
-| of                    | ❌                                            |                                                                                                          |
+| of                    | Collection.publisher()                       | In combine, you can do `[1, 2, 3].publisher()`                                                           |
 | publish               | makeConnectable                              |                                                                                                          |
 | range                 | ❌                                            |                                                                                                          |
 | reduce                | reduce, tryReduce                            |                                                                                                          |
