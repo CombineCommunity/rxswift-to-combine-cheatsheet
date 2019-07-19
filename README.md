@@ -90,7 +90,8 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | multicast             | multicast                                    |                                                                                                          |
 | never                 | Publishers.Empty(completeImmediately: false) |                                                                                                          |
 | observeOn             | receive(on:)                                 |                                                                                                          |
-| of                    | Collection.publisher()                       | In combine, you can do `[1, 2, 3].publisher()`                                                           |
+| of                    | Publishers.Sequence                          | Publishers.Sequence<[Int], Never>(sequence: [1,2,3,4,5]), or directly on Sequence types [1,2,3,4].publisher                                            
+|
 | publish               | makeConnectable                              |                                                                                                          |
 | range                 | ❌                                            |                                                                                                          |
 | reduce                | reduce, tryReduce                            |                                                                                                          |
