@@ -42,7 +42,7 @@ merge(maxConcurrent:),flatMap(maxPublishers:),
 multicast,multicast,
 never,Publishers.Empty(completeImmediately: false),
 observeOn,receive(on:),
-of,Publishers.Sequence,"Publishers.Sequence<[Int], Never>(sequence: [1,2,3,4,5]), or directly on Sequence types [1,2,3,4].publisher"
+of,Sequence.publisher,`publisher` property on any `Sequence` or you can use `Publishers.Sequence(sequence:)` directly
 publish,makeConnectable,
 range,❌,
 reduce,"reduce, tryReduce",

@@ -45,77 +45,77 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 
 ## [Operators](Data/operators.csv)
 
-| RxSwift               | Combine                                      | Notes                                                                                                       |
-|-----------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| amb()                 | ❌                                            |                                                                                                             |
-| asObservable()        | eraseToAnyPublisher()                        |                                                                                                             |
-| asObserver()          | ❌                                            |                                                                                                             |
-| bind(to:)             | `assign(to:on:)`                             | Assign uses a KeyPath which is really nice and useful. RxSwift needs a Binder / ObserverType to bind to.    |
-| buffer                | buffer                                       |                                                                                                             |
-| catchError            | catch                                        |                                                                                                             |
-| catchErrorJustReturn  | replaceError(with:)                          |                                                                                                             |
-| combineLatest         | combineLatest, tryCombineLatest              |                                                                                                             |
-| compactMap            | compactMap, tryCompactMap                    |                                                                                                             |
-| concat                | append, prepend                              |                                                                                                             |
-| concatMap             | ❌                                            |                                                                                                             |
-| create                | ❌                                            | Apple removed AnyPublisher with a closure in Xcode 11 beta 3 :-(                                            |
-| debounce              | debounce                                     |                                                                                                             |
-| debug                 | print                                        |                                                                                                             |
-| deferred              | Publishers.Deferred                          |                                                                                                             |
-| delay                 | delay                                        |                                                                                                             |
-| delaySubscription     | ❌                                            |                                                                                                             |
-| dematerialize         | ❌                                            |                                                                                                             |
-| distinctUntilChanged  | removeDuplicates, tryRemoveDuplicates        |                                                                                                             |
-| do                    | handleEvents                                 |                                                                                                             |
-| elementAt             | output(at:)                                  |                                                                                                             |
-| empty                 | Publishers.Empty(completeImmediately: true)  |                                                                                                             |
-| enumerated            | ❌                                            |                                                                                                             |
-| error                 | Publishers.Fail                              |                                                                                                             |
-| filter                | filter, tryFilter                            |                                                                                                             |
-| first                 | first, tryFirst                              |                                                                                                             |
-| flatMap               | flatMap                                      |                                                                                                             |
-| flatMapFirst          | ❌                                            |                                                                                                             |
-| flatMapLatest         | switchToLatest                               |                                                                                                             |
-| from                  | ❌                                            |                                                                                                             |
-| groupBy               | ❌                                            |                                                                                                             |
-| ifEmpty(default:)     | replaceEmpty(with:)                          |                                                                                                             |
-| ifEmpty(switchTo:)    | ❌                                            | Could be achieved with composition - replaceEmpty(with: publisher).switchToLatest()                         |
-| ignoreElements        | ignoreOutput                                 |                                                                                                             |
-| interval              | ❌                                            |                                                                                                             |
-| just                  | Just                                         |                                                                                                             |
-| map                   | map, tryMap                                  |                                                                                                             |
-| materialize           | ❌                                            |                                                                                                             |
-| merge                 | merge, tryMerge                              |                                                                                                             |
-| merge(maxConcurrent:) | flatMap(maxPublishers:)                      |                                                                                                             |
-| multicast             | multicast                                    |                                                                                                             |
-| never                 | Publishers.Empty(completeImmediately: false) |                                                                                                             |
-| observeOn             | receive(on:)                                 |                                                                                                             |
-| of                    | Publishers.Sequence                          | Publishers.Sequence<[Int], Never>(sequence: [1,2,3,4,5]), or directly on Sequence types [1,2,3,4].publisher |
-| publish               | makeConnectable                              |                                                                                                             |
-| range                 | ❌                                            |                                                                                                             |
-| reduce                | reduce, tryReduce                            |                                                                                                             |
-| refCount              | autoconnect                                  |                                                                                                             |
-| repeatElement         | ❌                                            |                                                                                                             |
-| retry, retry(3)       | retry, retry(3)                              |                                                                                                             |
-| retryWhen             | ❌                                            |                                                                                                             |
-| sample                | ❌                                            |                                                                                                             |
-| scan                  | scan, tryScan                                |                                                                                                             |
-| share                 | share                                        | There’s no replay or scope in Combine. Could be “faked” with multicast.                                     |
-| skip(3)               | dropFirst(3)                                 |                                                                                                             |
-| skipUntil             | drop(untilOutputFrom:)                       |                                                                                                             |
-| skipWhile             | drop(while:), tryDrop(while:)                |                                                                                                             |
-| startWith             | prepend                                      |                                                                                                             |
-| subscribe             | sink                                         |                                                                                                             |
-| subscribeOn           | subscribe(on:)                               | RxSwift uses Schedulers. Combine uses RunLoop, DispatchQueue, and OperationQueue.                           |
-| takeLast              | last                                         |                                                                                                             |
-| takeUntil             | prefix(untilOutputFrom:)                     |                                                                                                             |
-| throttle              | throttle                                     |                                                                                                             |
-| timeout               | timeout                                      |                                                                                                             |
-| timer                 | Timer.publish                                |                                                                                                             |
-| toArray()             | collect()                                    |                                                                                                             |
-| window                | collect(Publishers.TimeGroupingStrategy)     | Combine has a TimeGroupingStrategy.byTimeOrCount that could be used as a window.                            |
-| withLatestFrom        | ❌                                            |                                                                                                             |
-| zip                   | zip                                          |                                                                                                             |
+| RxSwift               | Combine                                      | Notes                                                                                                    |
+|-----------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| amb()                 | ❌                                            |                                                                                                          |
+| asObservable()        | eraseToAnyPublisher()                        |                                                                                                          |
+| asObserver()          | ❌                                            |                                                                                                          |
+| bind(to:)             | `assign(to:on:)`                             | Assign uses a KeyPath which is really nice and useful. RxSwift needs a Binder / ObserverType to bind to. |
+| buffer                | buffer                                       |                                                                                                          |
+| catchError            | catch                                        |                                                                                                          |
+| catchErrorJustReturn  | replaceError(with:)                          |                                                                                                          |
+| combineLatest         | combineLatest, tryCombineLatest              |                                                                                                          |
+| compactMap            | compactMap, tryCompactMap                    |                                                                                                          |
+| concat                | append, prepend                              |                                                                                                          |
+| concatMap             | ❌                                            |                                                                                                          |
+| create                | ❌                                            | Apple removed AnyPublisher with a closure in Xcode 11 beta 3 :-(                                         |
+| debounce              | debounce                                     |                                                                                                          |
+| debug                 | print                                        |                                                                                                          |
+| deferred              | Publishers.Deferred                          |                                                                                                          |
+| delay                 | delay                                        |                                                                                                          |
+| delaySubscription     | ❌                                            |                                                                                                          |
+| dematerialize         | ❌                                            |                                                                                                          |
+| distinctUntilChanged  | removeDuplicates, tryRemoveDuplicates        |                                                                                                          |
+| do                    | handleEvents                                 |                                                                                                          |
+| elementAt             | output(at:)                                  |                                                                                                          |
+| empty                 | Publishers.Empty(completeImmediately: true)  |                                                                                                          |
+| enumerated            | ❌                                            |                                                                                                          |
+| error                 | Publishers.Fail                              |                                                                                                          |
+| filter                | filter, tryFilter                            |                                                                                                          |
+| first                 | first, tryFirst                              |                                                                                                          |
+| flatMap               | flatMap                                      |                                                                                                          |
+| flatMapFirst          | ❌                                            |                                                                                                          |
+| flatMapLatest         | switchToLatest                               |                                                                                                          |
+| from                  | ❌                                            |                                                                                                          |
+| groupBy               | ❌                                            |                                                                                                          |
+| ifEmpty(default:)     | replaceEmpty(with:)                          |                                                                                                          |
+| ifEmpty(switchTo:)    | ❌                                            | Could be achieved with composition - replaceEmpty(with: publisher).switchToLatest()                      |
+| ignoreElements        | ignoreOutput                                 |                                                                                                          |
+| interval              | ❌                                            |                                                                                                          |
+| just                  | Just                                         |                                                                                                          |
+| map                   | map, tryMap                                  |                                                                                                          |
+| materialize           | ❌                                            |                                                                                                          |
+| merge                 | merge, tryMerge                              |                                                                                                          |
+| merge(maxConcurrent:) | flatMap(maxPublishers:)                      |                                                                                                          |
+| multicast             | multicast                                    |                                                                                                          |
+| never                 | Publishers.Empty(completeImmediately: false) |                                                                                                          |
+| observeOn             | receive(on:)                                 |                                                                                                          |
+| of                    | Sequence.publisher                           | `publisher` property on any `Sequence` or you can use `Publishers.Sequence(sequence:)` directly          |
+| publish               | makeConnectable                              |                                                                                                          |
+| range                 | ❌                                            |                                                                                                          |
+| reduce                | reduce, tryReduce                            |                                                                                                          |
+| refCount              | autoconnect                                  |                                                                                                          |
+| repeatElement         | ❌                                            |                                                                                                          |
+| retry, retry(3)       | retry, retry(3)                              |                                                                                                          |
+| retryWhen             | ❌                                            |                                                                                                          |
+| sample                | ❌                                            |                                                                                                          |
+| scan                  | scan, tryScan                                |                                                                                                          |
+| share                 | share                                        | There’s no replay or scope in Combine. Could be “faked” with multicast.                                  |
+| skip(3)               | dropFirst(3)                                 |                                                                                                          |
+| skipUntil             | drop(untilOutputFrom:)                       |                                                                                                          |
+| skipWhile             | drop(while:), tryDrop(while:)                |                                                                                                          |
+| startWith             | prepend                                      |                                                                                                          |
+| subscribe             | sink                                         |                                                                                                          |
+| subscribeOn           | subscribe(on:)                               | RxSwift uses Schedulers. Combine uses RunLoop, DispatchQueue, and OperationQueue.                        |
+| takeLast              | last                                         |                                                                                                          |
+| takeUntil             | prefix(untilOutputFrom:)                     |                                                                                                          |
+| throttle              | throttle                                     |                                                                                                          |
+| timeout               | timeout                                      |                                                                                                          |
+| timer                 | Timer.publish                                |                                                                                                          |
+| toArray()             | collect()                                    |                                                                                                          |
+| window                | collect(Publishers.TimeGroupingStrategy)     | Combine has a TimeGroupingStrategy.byTimeOrCount that could be used as a window.                         |
+| withLatestFrom        | ❌                                            |                                                                                                          |
+| zip                   | zip                                          |                                                                                                          |
 
 
 # Contributing
