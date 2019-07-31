@@ -68,7 +68,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | distinctUntilChanged  | removeDuplicates, tryRemoveDuplicates        |                                                                                                          |
 | do                    | handleEvents                                 |                                                                                                          |
 | elementAt             | output(at:)                                  |                                                                                                          |
-| empty                 | Publishers.Empty(completeImmediately: true)  |                                                                                                          |
+| empty                 | Empty(completeImmediately: true)             |                                                                                                          |
 | enumerated            | ❌                                            |                                                                                                          |
 | error                 | Publishers.Fail                              |                                                                                                          |
 | filter                | filter, tryFilter                            |                                                                                                          |
