@@ -70,7 +70,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | elementAt             | output(at:)                                  |                                                                                                          |
 | empty                 | Empty(completeImmediately: true)             |                                                                                                          |
 | enumerated            | ❌                                            |                                                                                                          |
-| error                 | Publishers.Fail                              |                                                                                                          |
+| error                 | Fail                                         |                                                                                                          |
 | filter                | filter, tryFilter                            |                                                                                                          |
 | first                 | first, tryFirst                              |                                                                                                          |
 | flatMap               | flatMap                                      |                                                                                                          |
