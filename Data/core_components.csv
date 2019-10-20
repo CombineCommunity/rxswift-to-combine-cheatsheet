@@ -8,7 +8,7 @@ ConnectableObservableType,ConnectablePublisher,
 Disposable,Cancellable,
 DisposeBag,A collection of AnyCancellables,"Call anyCancellable.store(in: collection), where collection can be an array, a set, or any other RangeReplaceableCollection"
 Driver,BindableObject (SwiftUI),"Both guarantee no failure, but Driver guarantees delivery on Main Thread. In Combine, SwiftUI recreates the entire view hierarachy on the Main Thread, instead."
-Maybe,Publishers.Optional,
+Maybe,❌,Apple removed Publishers.Optional.
 Observable,Publisher,
 Observer,Subscriber,
 PublishRelay,❌,"Simple wrapper around PublishSubject, could be easily recreated in Combine"
