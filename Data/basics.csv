@@ -1,4 +1,4 @@
-,RxSwift,Combine
+﻿,RxSwift,Combine
 Deployment Target,iOS 8.0+,iOS 13.0+
 Platforms supported,"iOS, macOS, tvOS, watchOS, Linux","iOS, macOS, tvOS, watchOS, UIKit for Mac ¹"
 Spec,Reactive Extensions (ReactiveX),Reactive Streams (+ adjustments)

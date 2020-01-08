@@ -5,7 +5,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 
 ## [Basics](Data/basics.csv)
 
-|                       | RxSwift                          | Combine                                    |
+| ﻿                     | RxSwift                          | Combine                                    |
 |-----------------------|----------------------------------|--------------------------------------------|
 | Deployment Target     | iOS 8.0+                         | iOS 13.0+                                  |
 | Platforms supported   | iOS, macOS, tvOS, watchOS, Linux | iOS, macOS, tvOS, watchOS, UIKit for Mac ¹ |
@@ -17,39 +17,39 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 
 ## [Core Components](Data/core_components.csv)
 
-| RxSwift                   | Combine                         | Notes                                                                                                                                                           |
+| ﻿RxSwift                  | Combine                         | Notes                                                                                                                                                           |
 |---------------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AnyObserver               | AnySubscriber                   |                                                                                                                                                                 |
-| BehaviorRelay             | ❌                               | Simple wrapper around BehaviorSubject, could be easily recreated in Combine                                                                                     |
+| BehaviorRelay             |                                 | Simple wrapper around BehaviorSubject, could be easily recreated in Combine                                                                                     |
 | BehaviorSubject           | CurrentValueSubject             | This seems to be the type that holds @State under the hood                                                                                                      |
-| Completable               | ❌                               |                                                                                                                                                                 |
-| CompositeDisposable       | ❌                               |                                                                                                                                                                 |
+| Completable               |                                 |                                                                                                                                                                 |
+| CompositeDisposable       |                                 |                                                                                                                                                                 |
 | ConnectableObservableType | ConnectablePublisher            |                                                                                                                                                                 |
 | Disposable                | Cancellable                     |                                                                                                                                                                 |
 | DisposeBag                | A collection of AnyCancellables | Call anyCancellable.store(in: collection), where collection can be an array, a set, or any other RangeReplaceableCollection                                     |
 | Driver                    | BindableObject (SwiftUI)        | Both guarantee no failure, but Driver guarantees delivery on Main Thread. In Combine, SwiftUI recreates the entire view hierarachy on the Main Thread, instead. |
-| Maybe                     | ❌                               | Apple removed Publishers.Optional.                                                                                                                              |
+| Maybe                     |                                 | Apple removed Publishers.Optional.                                                                                                                              |
 | Observable                | Publisher                       |                                                                                                                                                                 |
 | Observer                  | Subscriber                      |                                                                                                                                                                 |
-| PublishRelay              | ❌                               | Simple wrapper around PublishSubject, could be easily recreated in Combine                                                                                      |
+| PublishRelay              |                                 | Simple wrapper around PublishSubject, could be easily recreated in Combine                                                                                      |
 | PublishSubject            | PassthroughSubject              |                                                                                                                                                                 |
-| ReplaySubject             | ❌                               |                                                                                                                                                                 |
-| ScheduledDisposable       | ❌                               |                                                                                                                                                                 |
+| ReplaySubject             |                                 |                                                                                                                                                                 |
+| ScheduledDisposable       |                                 |                                                                                                                                                                 |
 | SchedulerType             | Scheduler                       |                                                                                                                                                                 |
-| SerialDisposable          | ❌                               |                                                                                                                                                                 |
-| Signal                    | ❌                               |                                                                                                                                                                 |
+| SerialDisposable          |                                 |                                                                                                                                                                 |
+| Signal                    |                                 |                                                                                                                                                                 |
 | Single                    | Future                          | They're only similar in the sense of single emission, but Future shares resources and executes immediately (very strange behavior)                              |
 | SubjectType               | Subject                         |                                                                                                                                                                 |
-| TestScheduler             | ❌                               | There doesn't seem to be an existing testing scheduler for Combine code                                                                                         |
+| TestScheduler             |                                 | There doesn't seem to be an existing testing scheduler for Combine code                                                                                         |
 
 
 ## [Operators](Data/operators.csv)
 
-| RxSwift               | Combine                                      | Notes                                                                                                    |
+| ﻿RxSwift              | Combine                                      | Notes                                                                                                    |
 |-----------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| amb()                 | ❌                                            |                                                                                                          |
+| amb()                 |                                              |                                                                                                          |
 | asObservable()        | eraseToAnyPublisher()                        |                                                                                                          |
-| asObserver()          | ❌                                            |                                                                                                          |
+| asObserver()          |                                              |                                                                                                          |
 | bind(to:)             | `assign(to:on:)`                             | Assign uses a KeyPath which is really nice and useful. RxSwift needs a Binder / ObserverType to bind to. |
 | buffer                | buffer                                       |                                                                                                          |
 | catchError            | catch                                        |                                                                                                          |
@@ -57,34 +57,34 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | combineLatest         | combineLatest, tryCombineLatest              |                                                                                                          |
 | compactMap            | compactMap, tryCompactMap                    |                                                                                                          |
 | concat                | append, prepend                              |                                                                                                          |
-| concatMap             | ❌                                            |                                                                                                          |
-| create                | ❌                                            | Apple removed AnyPublisher with a closure in Xcode 11 beta 3 :-(                                         |
+| concatMap             |                                              |                                                                                                          |
+| create                |                                              | Apple removed AnyPublisher with a closure in Xcode 11 beta 3 :-(                                         |
 | debounce              | debounce                                     |                                                                                                          |
 | debug                 | print                                        |                                                                                                          |
 | deferred              | Publishers.Deferred                          |                                                                                                          |
 | delay                 | delay                                        |                                                                                                          |
-| delaySubscription     | ❌                                            |                                                                                                          |
-| dematerialize         | ❌                                            |                                                                                                          |
+| delaySubscription     |                                              |                                                                                                          |
+| dematerialize         |                                              |                                                                                                          |
 | distinctUntilChanged  | removeDuplicates, tryRemoveDuplicates        |                                                                                                          |
 | do                    | handleEvents                                 |                                                                                                          |
 | elementAt             | output(at:)                                  |                                                                                                          |
 | empty                 | Empty(completeImmediately: true)             |                                                                                                          |
-| enumerated            | ❌                                            |                                                                                                          |
+| enumerated            |                                              |                                                                                                          |
 | error                 | Fail                                         |                                                                                                          |
 | filter                | filter, tryFilter                            |                                                                                                          |
 | first                 | first, tryFirst                              |                                                                                                          |
 | flatMap               | flatMap                                      |                                                                                                          |
-| flatMapFirst          | ❌                                            |                                                                                                          |
+| flatMapFirst          |                                              |                                                                                                          |
 | flatMapLatest         | switchToLatest                               |                                                                                                          |
-| from                  | ❌                                            |                                                                                                          |
-| groupBy               | ❌                                            |                                                                                                          |
+| from                  | Sequence.publisher                           | publisherproperty on anySequenceor you can usePublishers.Sequence(sequence:)directly                     |
+| groupBy               |                                              |                                                                                                          |
 | ifEmpty(default:)     | replaceEmpty(with:)                          |                                                                                                          |
-| ifEmpty(switchTo:)    | ❌                                            | Could be achieved with composition - replaceEmpty(with: publisher).switchToLatest()                      |
+| ifEmpty(switchTo:)    |                                              | Could be achieved with composition - replaceEmpty(with: publisher).switchToLatest()                      |
 | ignoreElements        | ignoreOutput                                 |                                                                                                          |
-| interval              | ❌                                            |                                                                                                          |
+| interval              |                                              |                                                                                                          |
 | just                  | Just                                         |                                                                                                          |
 | map                   | map, tryMap                                  |                                                                                                          |
-| materialize           | ❌                                            |                                                                                                          |
+| materialize           |                                              |                                                                                                          |
 | merge                 | merge, tryMerge                              |                                                                                                          |
 | merge(maxConcurrent:) | flatMap(maxPublishers:)                      |                                                                                                          |
 | multicast             | multicast                                    |                                                                                                          |
@@ -92,15 +92,15 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | observeOn             | receive(on:)                                 |                                                                                                          |
 | of                    | Sequence.publisher                           | `publisher` property on any `Sequence` or you can use `Publishers.Sequence(sequence:)` directly          |
 | publish               | makeConnectable                              |                                                                                                          |
-| range                 | ❌                                            |                                                                                                          |
+| range                 |                                              |                                                                                                          |
 | reduce                | reduce, tryReduce                            |                                                                                                          |
 | refCount              | autoconnect                                  |                                                                                                          |
-| repeatElement         | ❌                                            |                                                                                                          |
+| repeatElement         |                                              |                                                                                                          |
 | retry, retry(3)       | retry, retry(3)                              |                                                                                                          |
-| retryWhen             | ❌                                            |                                                                                                          |
-| sample                | ❌                                            |                                                                                                          |
+| retryWhen             |                                              |                                                                                                          |
+| sample                |                                              |                                                                                                          |
 | scan                  | scan, tryScan                                |                                                                                                          |
-| share                 | share                                        | There’s no replay or scope in Combine. Could be “faked” with multicast.                                  |
+| share                 | share                                        | There's no replay or scope in Combine. Could be "faked" with multicast.                                  |
 | skip(3)               | dropFirst(3)                                 |                                                                                                          |
 | skipUntil             | drop(untilOutputFrom:)                       |                                                                                                          |
 | skipWhile             | drop(while:), tryDrop(while:)                |                                                                                                          |
@@ -114,7 +114,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | timer                 | Timer.publish                                |                                                                                                          |
 | toArray()             | collect()                                    |                                                                                                          |
 | window                | collect(Publishers.TimeGroupingStrategy)     | Combine has a TimeGroupingStrategy.byTimeOrCount that could be used as a window.                         |
-| withLatestFrom        | ❌                                            |                                                                                                          |
+| withLatestFrom        |                                              |                                                                                                          |
 | zip                   | zip                                          |                                                                                                          |
 
 
