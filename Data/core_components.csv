@@ -1,23 +1,23 @@
-RxSwift,Combine,Notes
+﻿RxSwift,Combine,Notes
 AnyObserver,AnySubscriber,
-BehaviorRelay,❌,"Simple wrapper around BehaviorSubject, could be easily recreated in Combine"
+BehaviorRelay,,"Simple wrapper around BehaviorSubject, could be easily recreated in Combine"
 BehaviorSubject,CurrentValueSubject,This seems to be the type that holds @State under the hood
-Completable,❌,
-CompositeDisposable,❌,
+Completable,,
+CompositeDisposable,,
 ConnectableObservableType,ConnectablePublisher,
 Disposable,Cancellable,
 DisposeBag,A collection of AnyCancellables,"Call anyCancellable.store(in: collection), where collection can be an array, a set, or any other RangeReplaceableCollection"
 Driver,BindableObject (SwiftUI),"Both guarantee no failure, but Driver guarantees delivery on Main Thread. In Combine, SwiftUI recreates the entire view hierarachy on the Main Thread, instead."
-Maybe,❌,Apple removed Publishers.Optional.
+Maybe,,Apple removed Publishers.Optional.
 Observable,Publisher,
 Observer,Subscriber,
-PublishRelay,❌,"Simple wrapper around PublishSubject, could be easily recreated in Combine"
+PublishRelay,,"Simple wrapper around PublishSubject, could be easily recreated in Combine"
 PublishSubject,PassthroughSubject,
-ReplaySubject,❌,
-ScheduledDisposable,❌,
+ReplaySubject,,
+ScheduledDisposable,,
 SchedulerType,Scheduler,
-SerialDisposable,❌,
-Signal,❌,
+SerialDisposable,,
+Signal,,
 Single,Future,"They're only similar in the sense of single emission, but Future shares resources and executes immediately (very strange behavior)"
 SubjectType,Subject,
-TestScheduler,❌,There doesn't seem to be an existing testing scheduler for Combine code
+TestScheduler,,There doesn't seem to be an existing testing scheduler for Combine code
