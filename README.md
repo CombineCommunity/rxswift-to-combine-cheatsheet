@@ -90,7 +90,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | multicast             | multicast                                    |                                                                                                          |
 | never                 | Publishers.Empty(completeImmediately: false) |                                                                                                          |
 | observeOn             | receive(on:)                                 |                                                                                                          |
-| of                    | Sequence.publisher                           | `publisher` property on any `Sequence` or you can use `Publishers.Sequence(sequence:)` directly          |
+| of                    |                                              |                                                                                                          |
 | publish               | makeConnectable                              |                                                                                                          |
 | range                 |                                              |                                                                                                          |
 | reduce                | reduce, tryReduce                            |                                                                                                          |
