@@ -61,7 +61,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | create                | ❌                                            | Apple removed AnyPublisher with a closure in Xcode 11 beta 3 :-(                                         |
 | debounce              | debounce                                     |                                                                                                          |
 | debug                 | print                                        |                                                                                                          |
-| deferred              | Publishers.Deferred                          |                                                                                                          |
+| deferred              | Deferred                                     |                                                                                                          |
 | delay                 | delay                                        |                                                                                                          |
 | delaySubscription     | ❌                                            |                                                                                                          |
 | dematerialize         | ❌                                            |                                                                                                          |
