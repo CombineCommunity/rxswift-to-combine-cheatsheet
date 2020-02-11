@@ -116,6 +116,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | window                | collect(Publishers.TimeGroupingStrategy) | Combine has a TimeGroupingStrategy.byTimeOrCount that could be used as a window.                         |
 | withLatestFrom        | ❌                                        |                                                                                                          |
 | zip                   | zip                                      |                                                                                                          |
+| ❌                     | measureInterval                          |                                                                                                          |
 
 
 # Contributing
