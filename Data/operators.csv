@@ -68,3 +68,4 @@ toArray(),collect(),
 window,collect(Publishers.TimeGroupingStrategy),Combine has a TimeGroupingStrategy.byTimeOrCount that could be used as a window.
 withLatestFrom,❌,
 zip,zip,
+❌,measureInterval,
