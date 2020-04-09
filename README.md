@@ -76,7 +76,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | flatMap               | flatMap                                  |                                                                                                          |
 | flatMapFirst          | ❌                                        |                                                                                                          |
 | flatMapLatest         | switchToLatest                           |                                                                                                          |
-| from                  | ❌                                        |                                                                                                          |
+| from(optional:)       | Optional.Publisher(_ output:)            |                                                                                                          |
 | groupBy               | ❌                                        |                                                                                                          |
 | ifEmpty(default:)     | replaceEmpty(with:)                      |                                                                                                          |
 | ifEmpty(switchTo:)    | ❌                                        | Could be achieved with composition - replaceEmpty(with: publisher).switchToLatest()                      |
