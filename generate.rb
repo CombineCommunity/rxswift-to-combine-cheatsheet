@@ -1,7 +1,12 @@
 #!/usr/bin/env ruby
 
 system("csv2md > /dev/null 2>&1")
-error("csv2md is not intalled, Please run `bundle install` first") unless $?.exitstatus == 0
+unless $?.exitstatus == 0
+    print "Missing dependencies. Want to run `bundle install`? [Y/n]: "
+    answer = gets.chop.downcase.strip
+    
+    system("bundle install") if answer == "y"
+end
 
 require 'commonmarker'
 require 'imgkit'
