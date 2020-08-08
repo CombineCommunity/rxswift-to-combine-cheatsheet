@@ -57,7 +57,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | combineLatest         | combineLatest, tryCombineLatest          |                                                                                                          |
 | compactMap            | compactMap, tryCompactMap                |                                                                                                          |
 | concat                | append, prepend                          |                                                                                                          |
-| concatMap             | ❌                                        |                                                                                                          |
+| concatMap             | flatMap(maxPublishers: .max(1))          |  Set maxPublishers to 1 so that there is only one subscription at a time                                 |
 | create                | ❌                                        | Apple removed AnyPublisher with a closure in Xcode 11 beta 3 :-(                                         |
 | debounce              | debounce                                 |                                                                                                          |
 | debug                 | print                                    |                                                                                                          |
