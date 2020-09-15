@@ -107,6 +107,7 @@ It's based on the following blog post: [https://medium.com/gett-engineering/rxsw
 | startWith             | prepend                                  |                                                                                                          |
 | subscribe             | sink                                     |                                                                                                          |
 | subscribeOn           | subscribe(on:)                           | RxSwift uses Schedulers. Combine uses RunLoop, DispatchQueue, and OperationQueue.                        |
+| take(1)               | prefix(1)                                |                                                                                                          |
 | takeLast              | last                                     |                                                                                                          |
 | takeUntil             | prefix(untilOutputFrom:)                 |                                                                                                          |
 | throttle              | throttle                                 |                                                                                                          |
