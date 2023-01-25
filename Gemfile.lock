@@ -1,16 +1,13 @@
 GEM
+  specs:
+
+GEM
   remote: https://rubygems.org/
   specs:
     colorize (0.8.1)
-    commonmarker (0.20.1)
-      ruby-enum (~> 0.5)
-    concurrent-ruby (1.1.5)
+    commonmarker (0.23.7)
     csv2md (1.1.3)
-    i18n (1.6.0)
-      concurrent-ruby (~> 1.0)
     imgkit (1.6.2)
-    ruby-enum (0.7.2)
-      i18n
     wkhtmltoimage-binary (0.12.5)
 
 PLATFORMS
